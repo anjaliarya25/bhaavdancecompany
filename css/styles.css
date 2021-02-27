@@ -1,0 +1,251 @@
+:root {
+    --color-primary: #f34309;
+    --color-secondary: black;
+    --color-headings: white;
+    --color-selected: #61696b;
+}
+
+html {
+    /*
+    standard form in web browsers is 16px
+    62.5% of 16px is 10px
+    */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: var(--color-selected);
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-headings);
+}
+
+h1 {
+    font-size: 7.2rem;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 3.6rem;
+    /* margin-bottom: 2rem; */
+}
+
+/*Links*/
+a {
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+.link-arrow {
+    color: var(--color-headings);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.link-arrow::after {
+    content: "-->";
+    margin-left: 5px;
+    transition: margin 0.15s;
+}
+
+.link-arrow:hover::after {
+    margin-left: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: black;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    h2 {
+        font-size: 5.2rem;
+    }
+
+    h3 {
+        font-size: 4rem;
+    }
+
+    .link-arrow {
+        font-size: 2rem;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid white;
+    }
+
+    header .nav-logo {
+        height: 10rem;
+        width: 10rem;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        list-style: none;
+    }
+
+    header nav ul li a {
+        color: var(--color-headings);
+        margin: 0 15px;
+    }
+
+    header nav ul li a:hover {
+        color: var(--color-primary);
+    }
+
+    section {
+        display: grid;
+        /* margin-top: 10rem; */
+        grid-template: auto/100rem;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+
+        background: black;
+        transition: data-aos 0.5s;
+    }
+
+    section .main-about {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+        transition: data-aos 5s;
+    }
+
+    section .main-about_h1 {
+        margin-bottom: 6rem;
+    }
+
+    section .main-about_h2 {
+        margin-bottom: 3rem;
+        font-size: 3rem;
+        font-weight: lighter;
+    }
+
+    section p {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: var(--color-headings);
+    }
+
+    section .learn-more-btn {
+        width: 15rem;
+        height: 4rem;
+        font-size: 1.5rem;
+        background: var(--color-primary);
+        text-align: center;
+        justify-content: center;
+        color: var(--color-headings);
+        margin-bottom: 10rem;
+        border-radius: 2.5rem;
+        padding-top: 1rem;
+    }
+
+    section .learn-more-btn:hover {
+        background: #ba3d18;
+    }
+
+    .get-in-touch {
+        background: #f36c4f;
+        padding-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        /* margin-top: 10rem; */
+    }
+
+    .body-logo {
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 5rem;
+    }
+
+    .about-us h2 {
+        font-size: 3rem;
+        font-weight: lighter;
+        margin-top: 4rem;
+    }
+
+    .about-us h3 {
+        font-size: 2.5rem;
+        font-weight: lighter;
+        margin: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-us p {
+        margin-top: 3rem;
+        font-size: 2rem;
+        color: var(--color-headings);
+        margin-bottom: 5rem;
+    }
+
+    .get-in-touch-btn {
+        background: var(--color-headings);
+        padding: 2rem;
+        border-radius: 100px;
+        color: var(--color-secondary);
+    }
+
+    a .get-in-touch-btn {
+        margin-bottom: 3rem;
+    }
+
+    .book-now {
+        margin-top: 3rem;
+        background: var(--color-secondary);
+        border: 3px solid lightgrey;
+        display: flex;
+    }
+
+    .book-now-box {
+        width: 30vw;
+        background: var(--color-secondary);
+        border: 2px solid white;
+        /* margin: 1.5rem; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        /* height: 90vh; */
+        transition: transform 0.5s;
+    }
+
+    .book-now-box:hover {
+        transform: perspective(200px) translateZ(5px);
+    }
+}
