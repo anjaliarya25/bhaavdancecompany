@@ -4,6 +4,8 @@
     --color-headings: white;
     --color-selected: #61696b;
     --color-whitehover: #d6cfcf;
+    --color-footer:#222222;
+    --color-footertext:#6c6c6c;
 }
 
 html {
@@ -19,6 +21,7 @@ body {
     color: var(--color-selected);
     font-size: 2.8rem;
     line-height: 3.2rem;
+    overflow-x: hidden;
 }
 
 h1,
@@ -336,14 +339,19 @@ header nav ul {
         color: var(--color-headings);
     }
 
-    .schedule-session p,
+    .schedule-session p, 
     a {
         color: var(--color-headings);
         font-size: 2rem;
     }
 
+    .schedule-session .mail{
+        color: var(--color-headings);
+        font-size: 2rem;
+    }
+
     footer {
-        background: #222222;
+        background: var(--color-footer);
         display: flex;
         text-align: center;
         justify-content: center;
