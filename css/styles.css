@@ -3,6 +3,7 @@
     --color-secondary: black;
     --color-headings: white;
     --color-selected: #61696b;
+    --color-whitehover: #d6cfcf;
 }
 
 html {
@@ -178,12 +179,11 @@ header nav ul {
 
     .get-in-touch {
         background: #f36c4f;
-        padding-top: 10rem;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
-        /* margin-top: 10rem; */
+        padding: 4rem 5rem;
     }
 
     .body-logo {
@@ -191,61 +191,191 @@ header nav ul {
         width: 20rem;
         border-radius: 50%;
         overflow: hidden;
-        margin-top: 5rem;
+        margin-top: 3rem;
+    }
+
+    .about-us {
+        margin-top: 3rem;
     }
 
     .about-us h2 {
         font-size: 3rem;
         font-weight: lighter;
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
 
     .about-us h3 {
         font-size: 2.5rem;
         font-weight: lighter;
-        margin: 3rem;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
     .about-us p {
-        margin-top: 3rem;
         font-size: 2rem;
         color: var(--color-headings);
-        margin-bottom: 5rem;
+        margin-top: 2rem;
     }
 
     .get-in-touch-btn {
         background: var(--color-headings);
-        padding: 2rem;
         border-radius: 100px;
         color: var(--color-secondary);
+        box-sizing: border-box;
+        padding: 1rem 2rem;
+        display: inline-block;
+        margin-top: 2rem;
+    }
+    .get-in-touch-btn:hover {
+        background: var(--color-whitehover);
     }
 
-    a .get-in-touch-btn {
+    /* a .get-in-touch-btn {
         margin-bottom: 3rem;
-    }
+    } */
 
     .book-now {
-        margin-top: 3rem;
         background: var(--color-secondary);
-        border: 3px solid lightgrey;
+        border: 3px solid #d3d3d3;
         display: flex;
+        padding: 2rem 0;
     }
 
     .book-now-box {
-        width: 30vw;
         background: var(--color-secondary);
         border: 2px solid white;
-        /* margin: 1.5rem; */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
-        /* height: 90vh; */
         transition: transform 0.5s;
+        flex: 1;
+        margin: 0 2rem;
+    }
+
+    .book-now-box img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .content h2 {
+        font-size: 3rem;
+        font-weight: lighter;
+        margin: 2rem 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #d3d3d3;
     }
 
     .book-now-box:hover {
         transform: perspective(200px) translateZ(5px);
+    }
+
+    .description li {
+        list-style-type: none;
+        color: var(--color-headings);
+        font-size: 2rem;
+        padding: 0.5rem 2rem;
+    }
+
+    .book-now-btn {
+        height: 2rem;
+        width: 8rem;
+        background: var(--color-primary);
+        color: var(--color-headings);
+        padding: 1rem;
+        /* display: inline-block; */
+        margin: 0.5rem 2rem;
+    }
+
+    .owner-message {
+        display: flex;
+        margin: 4rem;
+        background: var(--color-secondary);
+    }
+
+    .owner-message img {
+        height: 100%;
+        width: 50%;
+    }
+
+    .message {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    .message h2 {
+        font-size: 3rem;
+        font-weight: lighter;
+        margin-bottom: 2rem;
+    }
+    .message h3 {
+        font-size: 2.5rem;
+        font-weight: lighter;
+    }
+
+    .video-slider {
+        display: flex;
+    }
+
+    .slide {
+        margin: 0.2rem;
+    }
+
+    .schedule-session {
+        display: flex;
+        margin: 4rem;
+        background: var(--color-primary);
+        text-align: center;
+    }
+
+    .schedule-session img {
+        height: 100%;
+        width: 50%;
+    }
+
+    .schedule-session h2 {
+        font-size: 4rem;
+        color: var(--color-headings);
+    }
+
+    .schedule-session p,
+    a {
+        color: var(--color-headings);
+        font-size: 2rem;
+    }
+
+    footer {
+        background: #222222;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    footer h2 {
+        font-size: 2rem;
+        color: var(--color-headings);
+    }
+
+    footer p,
+    a {
+        color: #6c6c6c;
+        font-size: 1.5rem;
+    }
+
+    footer a:hover {
+        color: var(--color-headings);
+    }
+
+    .video-slider {
+        overflow-x: scroll;
+    }
+
+    .slide-arrow {
+        position: "absolute";
+    }
+
+    .slide-arrow .left {
+        left: 10px;
+    }
+
+    .slide-arrow .right {
+        right: 10px;
     }
 }

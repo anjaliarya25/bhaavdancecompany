@@ -13,6 +13,52 @@
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(document).ready(function () {
+                var pos = 0,
+                    slides = $(".slide"),
+                    numOfSlides = slides.length;
+
+                function nextSlide() {
+                    // `[]` returns a vanilla DOM object from a jQuery object/collection
+                    console.log(slides[pos].video);
+                    slides[pos].video.stopVideo();
+                    slides.eq(pos).animate({ left: "-100%" }, 500);
+                    pos = pos >= numOfSlides - 1 ? 0 : ++pos;
+                    slides
+                        .eq(pos)
+                        .css({ left: "100%" })
+                        .animate({ left: 0 }, 500);
+                }
+
+                function previousSlide() {
+                    slides[pos].video.stopVideo();
+                    slides.eq(pos).animate({ left: "100%" }, 500);
+                    pos = pos == 0 ? numOfSlides - 1 : --pos;
+                    slides
+                        .eq(pos)
+                        .css({ left: "-100%" })
+                        .animate({ left: 0 }, 500);
+                }
+
+                $(".left").click(previousSlide);
+                $(".right").click(nextSlide);
+            });
+
+            function onYouTubeIframeAPIReady() {
+                $(".slide").each(function (index, slide) {
+                    // Get the `.video` element inside each `.slide`
+                    var iframe = $(slide).find(".video")[0];
+                    // Create a new YT.Player from the iFrame, and store it on the `.slide` DOM object
+                    slide.video = new YT.Player(iframe);
+                });
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -38,7 +84,13 @@
             </nav>
         </header>
         <section>
-            <div class="main-img" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease">
+            <div
+                class="main-img"
+                data-aos="zoom-in-up"
+                data-aos-duration="200"
+                data-aos-easing="ease"
+                data-aos-delay="0.5s"
+            >
                 <img
                     width="100%"
                     height="100%"
@@ -59,14 +111,15 @@
         </section>
         <div class="get-in-touch">
             <div class="body-logo">
-                <img data-aos="zoom-in-up"
+                <img
+                    data-aos="zoom-in-up"
                     width="100%"
                     height="100%"
                     src="./assets/images/logo.jpeg"
                     alt="logo"
                 />
             </div>
-            <div class="about-us" data-aos="fade-right">
+            <div class="about-us">
                 <h2>About Us</h2>
                 <h3>Dance Coaching Professional</h3>
                 <p>
@@ -85,13 +138,160 @@
             </div>
         </div>
         <div class="book-now">
-            <div class="book-now-box box1">a</div>
-            <div class="book-now-box box2">b</div>
-            <div class="book-now-box box3">c</div>
+            <div class="book-now-box">
+                <div><img src="./assets/images/class.PNG" alt="" /></div>
+                <div class="content">
+                    <h2 class="title">Book a Class</h2>
+                    <ul class="description">
+                        <li>Wednesday</li>
+                        <li>1 hr</li>
+                        <li>₹ 350</li>
+                    </ul>
+                    <a href="#" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="book-now-box">
+                <div><img src="./assets/images/wedding.jpg" alt="" /></div>
+                <div class="content">
+                    <h2 class="title">Bhaav Wedding Choreography</h2>
+                    <ul class="description">
+                        <li>₹ 500</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <a href="#" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="book-now-box">
+                <div><img src="./assets/images/workshop.PNG" alt="" /></div>
+                <div class="content">
+                    <h2 class="title">Dance Workshops</h2>
+                    <ul class="description">
+                        <li>₹ 400</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <a href="#" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
         </div>
-         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+        <div class="owner-message">
+            <img src="./assets/images/sameeksha.PNG" alt="" />
+            <div class="message">
+                <h2>Inspire and Be Inspired</h2>
+                <h3>-Sameeksha Mittal</h3>
+            </div>
+        </div>
+        <div class="video-slider">
+            <div class="slide">
+                <div style="position: relative">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/1ifEhhfeWac"
+                        frameborder="0"
+                        allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            <div class="slide">
+                <div style="position: relative">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/1ifEhhfeWac"
+                        frameborder="0"
+                        allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            <div class="slide">
+                <div style="position: relative">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/1ifEhhfeWac"
+                        <!--
+                        src="https://www.youtube.com/embed/C0DojvjiXS0"
+                        --
+                    >
+                        frameborder="0" allow="accelerometer; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen ></iframe
+                    >
+                </div>
+            </div>
+            <div class="slide">
+                <div style="position: relative">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/1ifEhhfeWac"
+                        <!--
+                        src="https://www.youtube.com/embed/C0DojvjiXS0"
+                        --
+                    >
+                        frameborder="0" allow="accelerometer; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen ></iframe
+                    >
+                </div>
+            </div>
+            <div class="slide">
+                <div style="position: relative">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/1ifEhhfeWac"
+                        <!--
+                        src="https://www.youtube.com/embed/C0DojvjiXS0"
+                        --
+                    >
+                        frameborder="0" allow="accelerometer; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen ></iframe
+                    >
+                </div>
+            </div>
+            <div class="slide-arrow left">Previous</div>
+            <div class="slide-arrow right">Next</div>
+        </div>
+        <div class="schedule-session">
+            <div class="message">
+                <h2>Schedule a Session</h2>
+                <p>
+                    207, S Mart, DC Chowk Market,, Sector 9, Rohini, Rajapur,
+                    Sector 9, Rohini, Delhi, 110085, India
+                </p>
+                <p>
+                    <a href="mailto:bhaavdancecompany@gmail.com"
+                        >Bhaav Dance Company</a
+                    >
+                </p>
+                <p>+91 9868045049</p>
+            </div>
+            <img src="./assets/images/schedule-session.PNG" alt="" />
+        </div>
+        <footer>
+            <div class="message">
+                <h2>Bhaav Dance Company</h2>
+                <p>
+                    207, S Mart, DC Chowk Market, Sector 9, Rohini, Rajapur,
+                    Sector 9, Rohini, Delhi, 110085, India
+                </p>
+                <p>
+                    <a href="mailto:bhaavdancecompany@gmail.com"
+                        >Bhaav Dance Company</a
+                    >
+                </p>
+                <p>+91 9868045049</p>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
